@@ -94,7 +94,6 @@
             this.toolStripMenu.Size = new System.Drawing.Size(1355, 25);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
-            this.toolStripMenu.UseWaitCursor = true;
             // 
             // toolStripButton2
             // 
@@ -124,8 +123,8 @@
             // btn_loadItems
             // 
             this.btn_loadItems.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btn_loadItems.Name = "btn_loadTypes";
-            this.btn_loadItems.Size = new System.Drawing.Size(69, 22);
+            this.btn_loadItems.Name = "btn_loadItems";
+            this.btn_loadItems.Size = new System.Drawing.Size(70, 22);
             this.btn_loadItems.Text = "Load Types";
             this.btn_loadItems.Click += new System.EventHandler(this.btn_loadTypes_Click);
             // 
@@ -171,7 +170,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection Details";
-            this.groupBox1.UseWaitCursor = true;
             // 
             // txt_targetName
             // 
@@ -186,7 +184,6 @@
             this.txt_targetName.TabIndex = 3;
             this.txt_targetName.Text = "Unassigned";
             this.txt_targetName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txt_targetName.UseWaitCursor = true;
             // 
             // txt_trgtLabel
             // 
@@ -200,7 +197,6 @@
             this.txt_trgtLabel.TabIndex = 2;
             this.txt_trgtLabel.Text = "Target Environment:";
             this.txt_trgtLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txt_trgtLabel.UseWaitCursor = true;
             // 
             // splitContainer1
             // 
@@ -212,18 +208,15 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.checklist_items);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
-            this.splitContainer1.Panel1.UseWaitCursor = true;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.data_portalItems);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Controls.Add(this.menuStrip2);
-            this.splitContainer1.Panel2.UseWaitCursor = true;
             this.splitContainer1.Size = new System.Drawing.Size(1355, 603);
             this.splitContainer1.SplitterDistance = 451;
             this.splitContainer1.TabIndex = 6;
-            this.splitContainer1.UseWaitCursor = true;
             // 
             // checklist_items
             // 
@@ -233,7 +226,6 @@
             this.checklist_items.Name = "checklist_items";
             this.checklist_items.Size = new System.Drawing.Size(451, 579);
             this.checklist_items.TabIndex = 1;
-            this.checklist_items.UseWaitCursor = true;
             // 
             // menuStrip1
             // 
@@ -246,7 +238,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(451, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu_listitems";
-            this.menuStrip1.UseWaitCursor = true;
             // 
             // btn_selectall_types
             // 
@@ -280,7 +271,6 @@
             this.data_portalItems.Size = new System.Drawing.Size(900, 368);
             this.data_portalItems.StandardTab = true;
             this.data_portalItems.TabIndex = 1;
-            this.data_portalItems.UseWaitCursor = true;
             // 
             // groupBox2
             // 
@@ -300,7 +290,6 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
-            this.groupBox2.UseWaitCursor = true;
             // 
             // menuStrip3
             // 
@@ -314,7 +303,6 @@
             this.menuStrip3.Size = new System.Drawing.Size(168, 24);
             this.menuStrip3.TabIndex = 2;
             this.menuStrip3.Text = "menu_listitems";
-            this.menuStrip3.UseWaitCursor = true;
             // 
             // btn_selectall_components
             // 
@@ -340,7 +328,6 @@
             this.combo_website.Name = "combo_website";
             this.combo_website.Size = new System.Drawing.Size(696, 21);
             this.combo_website.TabIndex = 8;
-            this.combo_website.UseWaitCursor = true;
             // 
             // date_before
             // 
@@ -349,7 +336,6 @@
             this.date_before.Name = "date_before";
             this.date_before.Size = new System.Drawing.Size(696, 20);
             this.date_before.TabIndex = 7;
-            this.date_before.UseWaitCursor = true;
             // 
             // date_after
             // 
@@ -358,7 +344,6 @@
             this.date_after.Name = "date_after";
             this.date_after.Size = new System.Drawing.Size(696, 20);
             this.date_after.TabIndex = 6;
-            this.date_after.UseWaitCursor = true;
             // 
             // check_active
             // 
@@ -369,7 +354,6 @@
             this.check_active.TabIndex = 5;
             this.check_active.Text = "Get only active records";
             this.check_active.UseVisualStyleBackColor = true;
-            this.check_active.UseWaitCursor = true;
             // 
             // check_website
             // 
@@ -380,7 +364,6 @@
             this.check_website.TabIndex = 4;
             this.check_website.Text = "Get record from website";
             this.check_website.UseVisualStyleBackColor = true;
-            this.check_website.UseWaitCursor = true;
             // 
             // check_before
             // 
@@ -391,7 +374,6 @@
             this.check_before.TabIndex = 3;
             this.check_before.Text = "Get records modified on or before";
             this.check_before.UseVisualStyleBackColor = true;
-            this.check_before.UseWaitCursor = true;
             // 
             // check_after
             // 
@@ -402,7 +384,6 @@
             this.check_after.TabIndex = 1;
             this.check_after.Text = "Get records modified on or after";
             this.check_after.UseVisualStyleBackColor = true;
-            this.check_after.UseWaitCursor = true;
             // 
             // menuStrip2
             // 
@@ -411,7 +392,6 @@
             this.menuStrip2.Size = new System.Drawing.Size(900, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
-            this.menuStrip2.UseWaitCursor = true;
             // 
             // contextMenuStrip1
             // 
@@ -445,9 +425,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStripMenu);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "window";
             this.Size = new System.Drawing.Size(1355, 678);
-            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.MyPluginControl_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
