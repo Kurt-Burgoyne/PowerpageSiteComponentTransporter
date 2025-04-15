@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualEntityPortalRecordMover", "VirtualEntityPortalRecordMover.csproj", "{E0FC8A79-0389-4FF0-B452-D8C3AFAC635A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerpageSiteComponentTransporter", "PowerpageSiteComponentTransporter.csproj", "{E0FC8A79-0389-4FF0-B452-D8C3AFAC635A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
