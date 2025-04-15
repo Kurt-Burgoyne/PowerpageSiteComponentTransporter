@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Transport virtual power page site components from one environment to another.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Kurt Burgoyne")]
-[assembly: AssemblyProduct("Powerpage Site Component Transporterr")]
+[assembly: AssemblyProduct("Powerpage Site Component Transporter")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
