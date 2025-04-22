@@ -22,6 +22,7 @@ namespace SiteComponentTransporter {
         private List<PortalRecord> portalRecords = new List<PortalRecord>();
         private BindingList<PortalRecord> portalRecordsBinding = new BindingList<PortalRecord>();
         private List<OptionSetMap> componentTypeMap = new List<OptionSetMap>();
+        private int lastSelectedTypeIndex = -1;
 
         public window () {
             InitializeComponent();
@@ -46,11 +47,13 @@ namespace SiteComponentTransporter {
         }
 
         private void data_portalItems_on_CurrentCellDirtyStateChanged (object sender, EventArgs e) {
+            // Default behaviour: Cell state only changes when clicked out of the cell, this fixed that issue.
             if (data_portalItems.IsCurrentCellDirty)
                 data_portalItems.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
 
         private void data_portalItems_ColumnHeaderMouseClick (object sender, DataGridViewCellMouseEventArgs e) {
+            // Sort the clicked column a-z
             string columnName = data_portalItems.Columns[e.ColumnIndex].Name;
 
             var sortedList = portalRecordsBinding.OrderBy(r =>
@@ -68,6 +71,10 @@ namespace SiteComponentTransporter {
                 LogInfo("Connection has changed to: {0}", detail.WebApplicationUrl);
             }
 
+            if (detail != null) {
+                btn_addTarget.Enabled = true;
+            }
+
             ExecuteMethod(PopulateWebsiteOptions);
         }
 
@@ -77,13 +84,18 @@ namespace SiteComponentTransporter {
         }
 
         protected override void ConnectionDetailsUpdated (NotifyCollectionChangedEventArgs e) {
-            if (AdditionalConnectionDetails.Count > 0)
+            if (AdditionalConnectionDetails.Count > 0) {
                 targetEnvironment = AdditionalConnectionDetails.LastOrDefault();
+                btn_transferRecords.Enabled = true;
+            }
+
             UpdateConnectionText();
         }
 
         // Click Handlers
         private void btn_addTarget_Click (object sender, EventArgs e) {
+
+            
             AdditionalConnectionDetails.Clear();
             AddAdditionalOrganization();
         }
