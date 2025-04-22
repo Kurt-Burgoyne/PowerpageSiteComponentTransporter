@@ -8,7 +8,7 @@
     <ProjectGuid>{E0FC8A79-0389-4FF0-B452-D8C3AFAC635A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VirtualEntityPortalRecordMover</RootNamespace>
+    <RootNamespace>SiteComponentTransporter</RootNamespace>
     <AssemblyName>PowerpageSiteComponentTransporter</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo_80.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\logo_80.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="McTools.Xrm.Connection, Version=1.2023.6.56, Culture=neutral, PublicKeyToken=96037217801d9658, processorArchitecture=MSIL">
@@ -176,6 +176,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppCode\OptionSetMap.cs" />
+    <Compile Include="AppCode\PortalRecord.cs" />
     <Compile Include="PowerpagePlugin.cs" />
     <Compile Include="MyPluginControl.cs">
       <SubType>UserControl</SubType>
@@ -184,6 +186,11 @@
       <DependentUpon>MyPluginControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +201,13 @@
     <EmbeddedResource Include="MyPluginControl.resx">
       <DependentUpon>MyPluginControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo_80.ico" />
+    <Content Include="Resources\logo_80.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

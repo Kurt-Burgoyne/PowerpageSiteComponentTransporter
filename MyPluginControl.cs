@@ -1,27 +1,21 @@
 ﻿using McTools.Xrm.Connection;
 using Microsoft.Crm.Sdk.Messages;
-using Microsoft.Rest;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Extensions;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media.Converters;
 using XrmToolBox.Extensibility;
+using SiteComponentTransporter.AppCode;
 
-namespace VirtualEntityPortalRecordMover {
+namespace SiteComponentTransporter {
     public partial class window : MultipleConnectionsPluginControlBase {
         private Settings mySettings;
         private ConnectionDetail targetEnvironment = null;
@@ -49,8 +43,6 @@ namespace VirtualEntityPortalRecordMover {
 
             data_portalItems.CurrentCellDirtyStateChanged += data_portalItems_on_CurrentCellDirtyStateChanged;
             data_portalItems.ColumnHeaderMouseClick += data_portalItems_ColumnHeaderMouseClick;
-
-            ExecuteMethod(PopulateWebsiteOptions);
         }
 
         private void data_portalItems_on_CurrentCellDirtyStateChanged (object sender, EventArgs e) {
@@ -96,7 +88,7 @@ namespace VirtualEntityPortalRecordMover {
             AddAdditionalOrganization();
         }
 
-        private void btn_loadTypes_Click (object sender, EventArgs e) {
+        private void btn_loadSource_Click (object sender, EventArgs e) {
             checklist_items.Items.Clear();
             ExecuteMethod(GetSiteComponentTypes);
         }
@@ -194,6 +186,7 @@ namespace VirtualEntityPortalRecordMover {
 
                         componentTypeMap.Add(new OptionSetMap(item.Label.UserLocalizedLabel.Label, item.Value));
                     }
+                    PopulateWebsiteOptions();
                 }
             });
         }
@@ -389,50 +382,5 @@ namespace VirtualEntityPortalRecordMover {
                 }
             });
         }
-    }
-
-    class PortalRecord : INotifyPropertyChanged {
-        public PortalRecord(string name, string createdon, string modifiedon, string modifiedby, string type) {
-            Name = name;
-            CreatedOn = createdon;
-            ModifiedOn = modifiedon;
-            ModifiedBy = modifiedby;
-            Selected = false;
-            Type = type;
-        }
-
-        private bool _selected;
-
-        public bool Selected {
-            get => _selected;
-            set {
-                if (_selected != value) {
-                    _selected = value;
-                    OnPropertyChanged(nameof(Selected));
-                }
-            }
-        }
-        public string Name { get; private set; }
-        public string CreatedOn { get; private set; }
-        public string ModifiedOn { get; private set; }
-        public string ModifiedBy { get; private set; }
-        public string Type { get; private set; }
-
-        public Guid ComponentReference;
-        public Entity SiteComponent;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged (string propertyName)
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-    class OptionSetMap {
-        public OptionSetMap (string name, int? value) {
-            Name = name;
-            Value = value == null ? -1 : value.Value;
-        }
-
-        public string Name { get; private set; }
-        public int Value { get; private set; }
     }
 }

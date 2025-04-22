@@ -1,4 +1,4 @@
-﻿namespace VirtualEntityPortalRecordMover {
+﻿namespace SiteComponentTransporter {
     partial class window {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -23,31 +23,28 @@
         /// le contenu de cette méthode avec l'éditeur de code.
         /// </summary>
         private void InitializeComponent () {
-            this.components = new System.ComponentModel.Container();
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btn_close = new System.Windows.Forms.ToolStripButton();
             this.tssSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_addTarget = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_loadItems = new System.Windows.Forms.ToolStripButton();
+            this.btn_loadSource = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_retrieveItems = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_transferRecords = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gb_connectionDetails = new System.Windows.Forms.GroupBox();
             this.txt_targetName = new System.Windows.Forms.Label();
             this.txt_trgtLabel = new System.Windows.Forms.Label();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.checklist_items = new System.Windows.Forms.CheckedListBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menu_selection_checklist = new System.Windows.Forms.MenuStrip();
             this.btn_selectall_types = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_clearselected_types = new System.Windows.Forms.ToolStripMenuItem();
             this.data_portalItems = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.gb_options = new System.Windows.Forms.GroupBox();
+            this.menu_selection_records = new System.Windows.Forms.MenuStrip();
             this.btn_selectall_components = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_clearselected_components = new System.Windows.Forms.ToolStripMenuItem();
             this.combo_website = new System.Windows.Forms.ComboBox();
@@ -57,33 +54,27 @@
             this.check_website = new System.Windows.Forms.CheckBox();
             this.check_before = new System.Windows.Forms.CheckBox();
             this.check_after = new System.Windows.Forms.CheckBox();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip5 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenu.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gb_connectionDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menu_selection_checklist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_portalItems)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
+            this.gb_options.SuspendLayout();
+            this.menu_selection_records.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripMenu
             // 
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
+            this.btn_close,
             this.tssSeparator1,
             this.btn_addTarget,
             this.toolStripSeparator3,
-            this.btn_loadItems,
+            this.btn_loadSource,
             this.toolStripSeparator2,
             this.btn_retrieveItems,
             this.toolStripSeparator4,
@@ -95,12 +86,12 @@
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
-            // toolStripButton2
+            // btn_close
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(40, 22);
-            this.toolStripButton2.Text = "Close";
+            this.btn_close.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(40, 22);
+            this.btn_close.Text = "Close";
             // 
             // tssSeparator1
             // 
@@ -120,13 +111,13 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // btn_loadItems
+            // btn_loadSource
             // 
-            this.btn_loadItems.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btn_loadItems.Name = "btn_loadItems";
-            this.btn_loadItems.Size = new System.Drawing.Size(70, 22);
-            this.btn_loadItems.Text = "Load Types";
-            this.btn_loadItems.Click += new System.EventHandler(this.btn_loadTypes_Click);
+            this.btn_loadSource.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btn_loadSource.Name = "btn_loadSource";
+            this.btn_loadSource.Size = new System.Drawing.Size(76, 22);
+            this.btn_loadSource.Text = "Load Source";
+            this.btn_loadSource.Click += new System.EventHandler(this.btn_loadSource_Click);
             // 
             // toolStripSeparator2
             // 
@@ -159,17 +150,17 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // groupBox1
+            // gb_connectionDetails
             // 
-            this.groupBox1.Controls.Add(this.txt_targetName);
-            this.groupBox1.Controls.Add(this.txt_trgtLabel);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1355, 50);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Connection Details";
+            this.gb_connectionDetails.Controls.Add(this.txt_targetName);
+            this.gb_connectionDetails.Controls.Add(this.txt_trgtLabel);
+            this.gb_connectionDetails.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gb_connectionDetails.Location = new System.Drawing.Point(0, 25);
+            this.gb_connectionDetails.Name = "gb_connectionDetails";
+            this.gb_connectionDetails.Size = new System.Drawing.Size(1355, 50);
+            this.gb_connectionDetails.TabIndex = 5;
+            this.gb_connectionDetails.TabStop = false;
+            this.gb_connectionDetails.Text = "Connection Details";
             // 
             // txt_targetName
             // 
@@ -207,13 +198,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.checklist_items);
-            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
+            this.splitContainer1.Panel1.Controls.Add(this.menu_selection_checklist);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.data_portalItems);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Panel2.Controls.Add(this.menuStrip2);
+            this.splitContainer1.Panel2.Controls.Add(this.gb_options);
             this.splitContainer1.Size = new System.Drawing.Size(1355, 603);
             this.splitContainer1.SplitterDistance = 451;
             this.splitContainer1.TabIndex = 6;
@@ -227,17 +217,17 @@
             this.checklist_items.Size = new System.Drawing.Size(451, 579);
             this.checklist_items.TabIndex = 1;
             // 
-            // menuStrip1
+            // menu_selection_checklist
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_selection_checklist.BackColor = System.Drawing.Color.Transparent;
+            this.menu_selection_checklist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_selectall_types,
             this.btn_clearselected_types});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(451, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menu_listitems";
+            this.menu_selection_checklist.Location = new System.Drawing.Point(0, 0);
+            this.menu_selection_checklist.Name = "menu_selection_checklist";
+            this.menu_selection_checklist.Size = new System.Drawing.Size(451, 24);
+            this.menu_selection_checklist.TabIndex = 0;
+            this.menu_selection_checklist.Text = "menu_listitems";
             // 
             // btn_selectall_types
             // 
@@ -263,46 +253,46 @@
             this.data_portalItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.data_portalItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.data_portalItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_portalItems.Location = new System.Drawing.Point(0, 235);
+            this.data_portalItems.Location = new System.Drawing.Point(0, 211);
             this.data_portalItems.Name = "data_portalItems";
             this.data_portalItems.RowHeadersVisible = false;
             this.data_portalItems.ShowCellToolTips = false;
             this.data_portalItems.ShowEditingIcon = false;
-            this.data_portalItems.Size = new System.Drawing.Size(900, 368);
+            this.data_portalItems.Size = new System.Drawing.Size(900, 392);
             this.data_portalItems.StandardTab = true;
             this.data_portalItems.TabIndex = 1;
             // 
-            // groupBox2
+            // gb_options
             // 
-            this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox2.Controls.Add(this.menuStrip3);
-            this.groupBox2.Controls.Add(this.combo_website);
-            this.groupBox2.Controls.Add(this.date_before);
-            this.groupBox2.Controls.Add(this.date_after);
-            this.groupBox2.Controls.Add(this.check_active);
-            this.groupBox2.Controls.Add(this.check_website);
-            this.groupBox2.Controls.Add(this.check_before);
-            this.groupBox2.Controls.Add(this.check_after);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 24);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(900, 211);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Options";
+            this.gb_options.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gb_options.Controls.Add(this.menu_selection_records);
+            this.gb_options.Controls.Add(this.combo_website);
+            this.gb_options.Controls.Add(this.date_before);
+            this.gb_options.Controls.Add(this.date_after);
+            this.gb_options.Controls.Add(this.check_active);
+            this.gb_options.Controls.Add(this.check_website);
+            this.gb_options.Controls.Add(this.check_before);
+            this.gb_options.Controls.Add(this.check_after);
+            this.gb_options.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gb_options.Location = new System.Drawing.Point(0, 0);
+            this.gb_options.Name = "gb_options";
+            this.gb_options.Size = new System.Drawing.Size(900, 211);
+            this.gb_options.TabIndex = 0;
+            this.gb_options.TabStop = false;
+            this.gb_options.Text = "Options";
             // 
-            // menuStrip3
+            // menu_selection_records
             // 
-            this.menuStrip3.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_selection_records.BackColor = System.Drawing.Color.Transparent;
+            this.menu_selection_records.Dock = System.Windows.Forms.DockStyle.None;
+            this.menu_selection_records.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_selectall_components,
             this.btn_clearselected_components});
-            this.menuStrip3.Location = new System.Drawing.Point(7, 184);
-            this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(168, 24);
-            this.menuStrip3.TabIndex = 2;
-            this.menuStrip3.Text = "menu_listitems";
+            this.menu_selection_records.Location = new System.Drawing.Point(7, 184);
+            this.menu_selection_records.Name = "menu_selection_records";
+            this.menu_selection_records.Size = new System.Drawing.Size(168, 24);
+            this.menu_selection_records.TabIndex = 2;
+            this.menu_selection_records.Text = "menu_listitems";
             // 
             // btn_selectall_components
             // 
@@ -385,45 +375,12 @@
             this.check_after.Text = "Get records modified on or after";
             this.check_after.UseVisualStyleBackColor = true;
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(900, 24);
-            this.menuStrip2.TabIndex = 2;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip3
-            // 
-            this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip4
-            // 
-            this.contextMenuStrip4.Name = "contextMenuStrip4";
-            this.contextMenuStrip4.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip5
-            // 
-            this.contextMenuStrip5.Name = "contextMenuStrip5";
-            this.contextMenuStrip5.Size = new System.Drawing.Size(61, 4);
-            // 
             // window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_connectionDetails);
             this.Controls.Add(this.toolStripMenu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "window";
@@ -431,21 +388,20 @@
             this.Load += new System.EventHandler(this.MyPluginControl_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gb_connectionDetails.ResumeLayout(false);
+            this.gb_connectionDetails.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menu_selection_checklist.ResumeLayout(false);
+            this.menu_selection_checklist.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_portalItems)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.menuStrip3.ResumeLayout(false);
-            this.menuStrip3.PerformLayout();
+            this.gb_options.ResumeLayout(false);
+            this.gb_options.PerformLayout();
+            this.menu_selection_records.ResumeLayout(false);
+            this.menu_selection_records.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,27 +411,23 @@
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.ToolStripButton btn_addTarget;
         private System.Windows.Forms.ToolStripSeparator tssSeparator1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb_connectionDetails;
         private System.Windows.Forms.Label txt_targetName;
         private System.Windows.Forms.Label txt_trgtLabel;
         private System.Windows.Forms.ToolStripButton btn_transferRecords;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btn_loadItems;
+        private System.Windows.Forms.ToolStripButton btn_loadSource;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.CheckedListBox checklist_items;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menu_selection_checklist;
         private System.Windows.Forms.ToolStripMenuItem btn_selectall_types;
         private System.Windows.Forms.ToolStripMenuItem btn_clearselected_types;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btn_close;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btn_retrieveItems;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gb_options;
         private System.Windows.Forms.CheckBox check_active;
         private System.Windows.Forms.CheckBox check_website;
         private System.Windows.Forms.CheckBox check_before;
@@ -484,11 +436,7 @@
         private System.Windows.Forms.DateTimePicker date_after;
         private System.Windows.Forms.DataGridView data_portalItems;
         private System.Windows.Forms.ComboBox combo_website;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip5;
-        private System.Windows.Forms.MenuStrip menuStrip3;
+        private System.Windows.Forms.MenuStrip menu_selection_records;
         private System.Windows.Forms.ToolStripMenuItem btn_selectall_components;
         private System.Windows.Forms.ToolStripMenuItem btn_clearselected_components;
     }
