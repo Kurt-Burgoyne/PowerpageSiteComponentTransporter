@@ -312,40 +312,45 @@ namespace SiteComponentTransporter {
             EntityReference newOwner = new EntityReference("systemuser", resp.UserId);
             EntityReference newBusinessUnit = new EntityReference("businessunit", resp.BusinessUnitId);
 
+            WorkAsync(new WorkAsyncInfo {
+                Message = $"Transffering {selectedRecords.Count} record(s)",
+                Work = (worker, args) => {
+                    foreach (PortalRecord record in selectedRecords) {
+                        record.SiteComponent.Attributes["ownerid"] = newOwner;
+                        record.SiteComponent.Attributes["modifiedby"] = newOwner;
+                        record.SiteComponent.Attributes["createdby"] = newOwner;
+                        record.SiteComponent.Attributes["owninguser"] = newOwner;
+                        record.SiteComponent.Attributes["owningbusinessunit"] = newBusinessUnit;
 
-            foreach (PortalRecord record in selectedRecords) {
-                record.SiteComponent.Attributes["ownerid"] = newOwner;
-                record.SiteComponent.Attributes["modifiedby"] = newOwner;
-                record.SiteComponent.Attributes["createdby"] = newOwner;
-                record.SiteComponent.Attributes["owninguser"] = newOwner;
-                record.SiteComponent.Attributes["owningbusinessunit"] = newBusinessUnit;
-
-                if (DoesRecordExist(record.ComponentReference)) {
-                    try {
-                        targetEnvironment.ServiceClient.Update(record.SiteComponent);
-                        updatedItems++;
+                        if (DoesRecordExist(record.ComponentReference)) {
+                            try {
+                                targetEnvironment.ServiceClient.Update(record.SiteComponent);
+                                updatedItems++;
+                            }
+                            catch (Exception ex) {
+                                errorItems++;
+                                LogError($"Error Creating {record.Name}: {ex}");
+                            }
+                        }
+                        else {
+                            try {
+                                targetEnvironment.ServiceClient.Create(record.SiteComponent);
+                                createdItems++;
+                            }
+                            catch (Exception ex) {
+                                errorItems++;
+                                LogError($"Error Creating {record.Name}: {ex}");
+                            }
+                        }
                     }
-                    catch (Exception ex) {
-                        errorItems++;
-                        LogError($"Error Creating {record.Name}: {ex}");
-                    }
+                },
+                PostWorkCallBack = (args) => {
+                    if (errorItems <= 0)
+                        MessageBox.Show($"{createdItems} have been created and {updatedItems} have been updated.");
+                    else
+                        MessageBox.Show($"{createdItems} have been created and {updatedItems} have been updated. {errorItems} were encountered check the logs for more details!");
                 }
-                else {
-                    try { 
-                        targetEnvironment.ServiceClient.Create(record.SiteComponent);
-                        createdItems++;
-                    }
-                    catch (Exception ex) {
-                        errorItems++;
-                        LogError($"Error Creating {record.Name}: {ex}");
-                    }
-                }
-            }
-
-            if (errorItems <= 0)
-                MessageBox.Show($"{createdItems} have been created and {updatedItems} have been updated.");
-            else
-                MessageBox.Show($"{createdItems} have been created and {updatedItems} have been updated. {errorItems} were encountered check the logs for more details!");
+            });
         }   
 
         private bool DoesRecordExist(Guid recordId) {
